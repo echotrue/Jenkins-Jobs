@@ -6,16 +6,14 @@ import org.dgame.jenkins.pipeline.Logger
 def helper = new JenkinsHelper(this)
 def logger = new Logger(this)
 
-node{
-    wrap([$class: 'BuildUser']){
-        ansiColor('xterm'){
-            stage('init'){
-                helper.say()
-            }
+node {
+    ansiColor('xterm') {
+        stage('init') {
+            helper.say()
+        }
 
-            stage('echo'){
-                logger.info("this is echo stage")
-            }
+        stage('echo') {
+            logger.info("this is echo stage")
         }
     }
 }
