@@ -12,8 +12,12 @@ node {
             helper.say()
         }
 
-        stage('echo') {
+        stage('build') {
             logger.info("this is echo stage")
+        }
+
+        stage('sync'){
+            logger.debug("已同步到测试服")
         }
     }
 }
