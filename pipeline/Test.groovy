@@ -17,6 +17,9 @@ node {
 
     properties(taskProperties)
 
+    parameters {
+        booleanParam(name: 'DEBUG_BUILD', defaultValue: true, description: '-----')
+    }
 
     ansiColor('xterm') {
         stage('init') {
