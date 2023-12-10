@@ -7,6 +7,17 @@ def helper = new JenkinsHelper(this)
 def logger = new Logger(this)
 
 node {
+
+    def formOptions = []
+    def taskProperties = []
+
+    formOptions.add(booleanParam(name: 'Production', defaultValue: false, description: '是否打最终包？'))
+
+    taskProperties.add(parameters(formOptions))
+
+    properties(taskProperties)
+
+
     ansiColor('xterm') {
         stage('init') {
             helper.say()
@@ -16,7 +27,7 @@ node {
             logger.info("this is echo stage")
         }
 
-        stage('sync'){
+        stage('sync') {
             logger.debug("已同步到测试服")
         }
     }
