@@ -12,14 +12,11 @@ node {
     def taskProperties = []
 
     formOptions.add(booleanParam(name: 'Production', defaultValue: false, description: '是否打最终包？'))
+    formOptions.add(booleanParam(name: 'DEBUG_BUILD', defaultValue: true, description: '-----'))
 
     taskProperties.add(parameters(formOptions))
 
     properties(taskProperties)
-
-    parameters {
-        booleanParam(name: 'DEBUG_BUILD', defaultValue: true, description: '-----')
-    }
 
     ansiColor('xterm') {
         stage('init') {
