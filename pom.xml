@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.dgame.jenkins</groupId>
-    <artifactId>jobsss</artifactId>
+    <artifactId>jobs</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <dependencies>
@@ -15,6 +15,24 @@
             <version>4.0.14</version>
             <type>pom</type>
         </dependency>
+
+        <!-- 添加本地 Jar 库依赖包 -->
+        <dependency>
+            <groupId>org.dgame.jenkins</groupId>
+            <artifactId>shared</artifactId>
+            <version>1.0.0</version>
+            <scope>system</scope>
+            <systemPath>${basedir}/lib/shared.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>org.dgame.jenkins</groupId>
+            <artifactId>shared</artifactId>
+            <version>1.0.0</version>
+            <scope>system</scope>
+            <classifier>sources</classifier>
+            <systemPath>${basedir}/lib/shared-sources.jar</systemPath>
+        </dependency>
+
     </dependencies>
 
     <build>
