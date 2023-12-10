@@ -1,4 +1,4 @@
-@Library('shared')
+@Library('shared@master')
 
 import org.dgame.jenkins.pipeline.JenkinsHelper
 
